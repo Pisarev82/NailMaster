@@ -3,4 +3,11 @@
     <string name="todayDate">01/09/2017</string>
     <string name="button">button</string>
     <string name="Button2">Button2</string>
+    <string-array name="spinner_item">
+        <item>mug Java</item>
+        <item>android oreo</item>
+        <item>android nougat</item>
+        <item>android marshmallow</item>
+        <item>android lollipop</item>
+    </string-array>
 </resources>
