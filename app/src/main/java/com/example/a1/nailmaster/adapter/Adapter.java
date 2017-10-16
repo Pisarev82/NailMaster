@@ -64,4 +64,9 @@ public class Adapter extends BaseAdapter {
 
         return (DateAndNote) getItem(position);
     }
+
+    public void addElement () {
+        list.add(new DateAndNote("New"));
+        notifyDataSetChanged();
+    }
 }
