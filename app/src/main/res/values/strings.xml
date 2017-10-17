@@ -6,4 +6,5 @@
     <string name="master_list_add">Добавить заметку</string>
     <string name="master_list_edit">Редактировать заметку</string>
     <string name="master_list_delete">Удалить заметку</string>
+    <string name="date_of_note">date_of_note</string>
 </resources>
