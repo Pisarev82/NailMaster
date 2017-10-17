@@ -8,12 +8,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
+
 
 
 import com.example.a1.nailmaster.adapter.Adapter;
 import com.example.a1.nailmaster.data.DateAndNote;
+import com.example.a1.nailmaster.data.ListOfNote;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
     private ListView listView;
     Adapter adapter;
-    private List<DateAndNote> list = new ArrayList<DateAndNote>();
+    private List<DateAndNote> list;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         listView = (ListView) findViewById(R.id.listView);
 
 
-        adapter = new Adapter(this, initData());
+        adapter = new Adapter(this, (List<DateAndNote>) new ListOfNote().getListOfnote());
         listView.setAdapter(adapter);
 
         registerForContextMenu(listView);
@@ -54,25 +54,13 @@ public class MainActivity extends AppCompatActivity {
             case R.id.master_list_add:
                 adapter.addElement();
                 return true;
-//            case R.id.master_list_edit:
-//                int id = (int) listView.getSelectedItemId();
-//                String nout = list.get(id).getNote();
-//                Toast.makeText(this, id, Toast.LENGTH_SHORT).show();
-//                return true;
+            case R.id.master_list_delete:
+                adapter.delitItem(info.position);
+                return true;
         }
         return super.onContextItemSelected(item);
     }
 
-    private List<DateAndNote> initData() {
-
-
-        list.add(new DateAndNote("first"));
-        list.add(new DateAndNote("second"));
-        list.add(new DateAndNote("third"));
-        list.add(new DateAndNote("Today1"));
-
-        return list;
-    }
 
 
 }

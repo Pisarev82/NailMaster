@@ -69,4 +69,10 @@ public class Adapter extends BaseAdapter {
         list.add(new DateAndNote("New"));
         notifyDataSetChanged();
     }
+
+
+    public void delitItem (int position) {
+        list.remove(position);
+        notifyDataSetChanged();
+    }
 }

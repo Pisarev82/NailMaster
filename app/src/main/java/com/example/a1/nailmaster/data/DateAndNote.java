@@ -9,11 +9,14 @@ import java.util.Date;
 
 public class DateAndNote {
 
+    private String title;
     private String note;
-    private String dateToString;
-    private Date date;
 
-    public DateAndNote(String note) {
+    private Date date;
+    private String dateToString;
+
+    public DateAndNote(String title) {
+        this.title = title;
         this.note = note;
         date = new Date();
     }
@@ -39,5 +42,13 @@ public class DateAndNote {
     public String getDateToString() {
 
         return dateToString = DATA_FORMAT.format(date);
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 }
