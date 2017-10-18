@@ -51,8 +51,8 @@ public class Adapter extends BaseAdapter {
 
         DateAndNote dateAndNote = getDate(position);
 
-        TextView textView = (TextView) view.findViewById(R.id.data);
-        textView.setText(dateAndNote.getDateToString());
+        TextView textView = (TextView) view.findViewById(R.id.title_of_note);
+        textView.setText(dateAndNote.getTitle());
 
         TextView textView1 = (TextView) view.findViewById(R.id.note);
         textView1.setText(dateAndNote.getNote());
@@ -65,8 +65,8 @@ public class Adapter extends BaseAdapter {
         return (DateAndNote) getItem(position);
     }
 
-    public void addElement () {
-        list.add(new DateAndNote("New"));
+    public void addElement (String previous) {
+        list.add(new DateAndNote("New" + " " + previous));
         notifyDataSetChanged();
     }
 

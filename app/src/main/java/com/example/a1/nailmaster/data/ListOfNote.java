@@ -11,11 +11,9 @@ public class ListOfNote {
 
     private List<DateAndNote> list = new ArrayList<DateAndNote>();
 
-    public ListOfNote () {
-        initList();
-    }
 
-    private List<DateAndNote> initList() {
+
+    public List<DateAndNote> initList() {
 
 
         list.add(new DateAndNote("first"));
@@ -28,5 +26,16 @@ public class ListOfNote {
 
     public List<DateAndNote> getListOfnote () {
         return list;
+    }
+
+    public Object getItem(int position) {
+        return list.get(position);
+//        return list.get(position);
+    }
+
+
+    public DateAndNote getDateAndNoute (int position) {
+
+        return  list.get(position);
     }
 }

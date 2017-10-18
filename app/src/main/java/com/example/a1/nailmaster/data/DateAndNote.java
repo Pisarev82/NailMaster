@@ -20,6 +20,12 @@ public class DateAndNote {
         this.note = note;
         date = new Date();
     }
+    public DateAndNote() {
+        this.title = title;
+        this.note = note;
+        date = new Date();
+    }
+
 
     private static SimpleDateFormat DATA_FORMAT = new SimpleDateFormat("dd.MM.yyyy");
 
