@@ -8,5 +8,6 @@
     <string name="master_list_delete">Удалить заметку</string>
     <string name="date_of_note">date_of_note</string>
     <string name="title_of_note">title_of_note</string>
-    <string name="note">note</string>
+    <string name="note">Дополнительное описание</string>
+    <string name="save">Сохранить</string>
 </resources>
