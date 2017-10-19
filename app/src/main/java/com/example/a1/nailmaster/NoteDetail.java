@@ -51,7 +51,7 @@ public class NoteDetail extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
-        /* Инициализация элементов активити */
+        /* Инициализация элементов активити1 */
     private void initUi () {
         date = (EditText) findViewById(R.id.date_of_note);
         title = (EditText) findViewById(R.id.title_of_note);
