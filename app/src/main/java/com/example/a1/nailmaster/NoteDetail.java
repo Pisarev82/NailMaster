@@ -16,8 +16,8 @@ public class NoteDetail extends AppCompatActivity {
     EditText title;
     EditText note;
     Intent intent;
-    ListOfNote listOfNote;
-    DateAndNote dateAndNote;
+//    ListOfNote listOfNote;
+    DateAndNote dateAndNote = new DateAndNote();
     int position;
 
     @Override
@@ -29,25 +29,33 @@ public class NoteDetail extends AppCompatActivity {
         title = (EditText) findViewById(R.id.title_of_note);
         note = (EditText) findViewById(R.id.note);
 
+        /*запуск метода для получения объекта из списка */
 //        getObjectOfList();
+        /* получение строкового ресурса*/
+//        intent = getIntent();
+//        String titleString = intent.getStringExtra("title");
+//        title.setText(titleString);
+/* проба реализовать получение объекта через id  в методе onCreate*/
         intent = getIntent();
-        String titleString = intent.getStringExtra("title");
-        title.setText(titleString);
+        position = intent.getIntExtra("id", 1);
+        dateAndNote = ListOfNote.getDateAndNoute(position);
+        title.setText(dateAndNote.getTitle());
+
 
     }
+        /* Метод для получения интовой переменной, которая будет использоваться для получения объекта из списка */
+    public void getObjectOfList (){
+        intent = getIntent();
 
-//    public void getObjectOfList (){
-//        intent = new Intent();
-//
-////        position = intent.getIntExtra("POSITION", 1);
-//        try {
-////            dateAndNote = new DateAndNote("Work"); // it's work
-//
-//            /* Дальнейший код не работает, потому что я не знаю как передать объект в новую активити */
-////            listOfNote.getListOfnote();
-////            dateAndNote = listOfNote.getDateAndNoute(position);
-//
-//        } catch (Exception e) {
-//            Toast.makeText(this, "fack", Toast.LENGTH_SHORT).show();}
-//    }
+        position = intent.getIntExtra("id", 1);
+
+//            dateAndNote = new DateAndNote("Work"); // it's work
+
+            /* Дальнейший код не работает, потому что я не знаю как передать объект в новую активити */
+//            listOfNote.getListOfnote();
+//        dateAndNote = listOfNote.getDateAndNoute(position);
+        title.setText(dateAndNote.getTitle());
+
+
+    }
 }

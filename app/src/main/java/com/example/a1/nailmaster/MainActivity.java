@@ -62,10 +62,13 @@ public class MainActivity extends AppCompatActivity {
                 adapter.addElement(dateAndNote.getTitle());
                 return true;
             case R.id.master_list_edit:
+
                 Intent intent = new Intent(this, NoteDetail.class);
+                /* Передача строковой переменной. При отказе в реалиции этого типа передачи нужно удалить инициализацию этой переменной */
+//                intent.putExtra("title", dateAndNote.getTitle());
+                /* Передача интовой переменной на объект */
+                intent.putExtra("id", i);
 
-
-                intent.putExtra("title", dateAndNote.getTitle());
                 startActivity(intent);
                 return true;
             case R.id.master_list_delete:

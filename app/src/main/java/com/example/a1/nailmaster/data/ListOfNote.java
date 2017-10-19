@@ -9,7 +9,7 @@ import java.util.List;
 
 public class ListOfNote {
 
-    private List<DateAndNote> list = new ArrayList<DateAndNote>();
+    private static List<DateAndNote> list = new ArrayList<DateAndNote>();
 
 
 
@@ -34,7 +34,7 @@ public class ListOfNote {
     }
 
 
-    public DateAndNote getDateAndNoute (int position) {
+    public static DateAndNote getDateAndNoute(int position) {
 
         return  list.get(position);
     }
