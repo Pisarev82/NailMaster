@@ -7,15 +7,12 @@
         android:id="@+id/title_of_note"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="15dp"
         android:text="TextView"
-        android:textSize="26sp" />
+         />
 
     <TextView
         android:id="@+id/note"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingLeft="20dp"
-        android:paddingTop="15dp"
         android:text="TextView" />
 </LinearLayout>

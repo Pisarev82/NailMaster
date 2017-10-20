@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/title_of_note_in_list"
+        android:layout_width="368dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/note"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="-1dp" />
+
+    <EditText
+        android:id="@+id/description_of_note_in_list"
+        android:layout_width="368dp"
+        android:layout_height="wrap_content"
+        android:inputType=""
+        android:text="textMultiLine"
+        android:lines="3"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="42dp" />
+</android.support.constraint.ConstraintLayout>

@@ -3,6 +3,7 @@ package com.example.a1.nailmaster;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -31,9 +32,13 @@ public class NoteDetail extends AppCompatActivity {
 
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        return super.onCreateOptionsMenu(menu);
 
+    }
 
-        /* Метод для получения интовой переменной, которая использоваться для получения объекта из списка и заполнения теккстовых полей */
+    /* Метод для получения интовой переменной, которая использоваться для получения объекта из списка и заполнения теккстовых полей */
     public void getObjectOfList (){
         intent = getIntent();
         position = intent.getIntExtra("id", 1);

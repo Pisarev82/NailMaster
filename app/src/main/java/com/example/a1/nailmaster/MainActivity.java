@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import android.view.ContextMenu;
+import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -31,9 +32,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         listView = (ListView) findViewById(R.id.listView);
-
         listOfNote = new ListOfNote();
         list = listOfNote.getListOfnote();
         if (list.size() == 0) {list = listOfNote.initList();}
@@ -58,18 +57,11 @@ public class MainActivity extends AppCompatActivity {
         dateAndNote = listOfNote.getDateAndNoute(i);
         switch (item.getItemId()) {
             case R.id.master_list_add:
-
-
                 adapter.addElement(dateAndNote.getTitle());
                 return true;
             case R.id.master_list_edit:
-
                 Intent intent = new Intent(this, NoteDetail.class);
-                /* Передача строковой переменной. При отказе в реалиции этого типа передачи нужно удалить инициализацию этой переменной */
-//                intent.putExtra("title", dateAndNote.getTitle());
-                /* Передача интовой переменной на объект */
                 intent.putExtra("id", i);
-
                 startActivity(intent);
                 return true;
             case R.id.master_list_delete:
@@ -79,6 +71,10 @@ public class MainActivity extends AppCompatActivity {
         return super.onContextItemSelected(item);
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.options_menu, menu);
+        return super.onCreateOptionsMenu(menu);
 
-
+    }
 }
