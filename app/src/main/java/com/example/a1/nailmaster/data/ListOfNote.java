@@ -24,7 +24,7 @@ public class ListOfNote {
         return list;
     }
 
-    public List<DateAndNote> getListOfnote () {
+    public static List<DateAndNote> getListOfnote () {
         return list;
     }
 

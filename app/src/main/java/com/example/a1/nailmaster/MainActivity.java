@@ -67,14 +67,31 @@ public class MainActivity extends AppCompatActivity {
             case R.id.master_list_delete:
                 adapter.delitItem(info.position);
                 return true;
+            case R.id.master_new_activity:
+                Intent intent1 = new Intent(this, NoteListActivity.class);
+                startActivity(intent1);return true;
         }
         return super.onContextItemSelected(item);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.options_menu, menu);
-        return super.onCreateOptionsMenu(menu);
 
+        getMenuInflater().inflate(R.menu.options_menu, menu);
+
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+            case R.id.menu_about:
+                Intent inttent = new Intent(this, NoteListActivity.class);
+                startActivity(inttent);
+                return true;
+        }
+        super.onOptionsItemSelected(item);
+        return true;
     }
 }

@@ -9,6 +9,7 @@
     <string name="date_of_note">date_of_note</string>
     <string name="title_of_note"></string>
     <string name="note">Дополнительное описание</string>
+    <string name="number">количество</string>
     <string name="save">Сохранить</string>
     <string name="options_menu_about">О программе</string>
 </resources>

@@ -19,8 +19,8 @@ import java.util.List;
 
 public class Adapter extends BaseAdapter {
 
-    private List<DateAndNote> list;
-    private LayoutInflater layoutInflater;
+    public List<DateAndNote> list;
+    public LayoutInflater layoutInflater;
 
     public Adapter(Context context, List<DateAndNote> list) {
         this.list = list;

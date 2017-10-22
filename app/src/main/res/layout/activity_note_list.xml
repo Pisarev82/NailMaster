@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.a1.nailmaster.NoteList">
+    tools:context="com.example.a1.nailmaster.NoteListActivity">
 
 
     <ListView
-        android:id="@+id/listView"
+        android:id="@+id/listView_activity_note_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
