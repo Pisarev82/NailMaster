@@ -38,4 +38,5 @@ public class ListOfNote {
 
         return  list.get(position);
     }
+
 }

@@ -3,7 +3,7 @@ package com.example.a1.nailmaster.adapter;
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
+import android.widget.TextView;
 
 
 import com.example.a1.nailmaster.R;
@@ -30,12 +30,18 @@ public class AdapterForNotelistactivity extends Adapter {
 
         DateAndNote dateAndNote = ListOfNote.getDateAndNoute(position);
 
-        EditText editText = (EditText) view.findViewById(R.id.title_of_note_in_list);
-        editText.setText(dateAndNote.getTitle());
+        TextView textView= (TextView) view.findViewById(R.id.title_of_note_in_list);
+        textView.setText(dateAndNote.getTitle());
 
-        EditText editText1 = (EditText) view.findViewById(R.id.description_of_note_in_list);
-        editText1.setText(dateAndNote.getNote());
+        TextView textView1 = (TextView) view.findViewById(R.id.description_of_note_in_list);
+        textView1.setText(dateAndNote.getVolume());
 
         return view;
     }
+
+    public void addElement (String title, String volume) {
+        list.add(new DateAndNote(title, volume));
+        notifyDataSetChanged();
+    }
+
 }

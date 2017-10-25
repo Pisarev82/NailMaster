@@ -11,21 +11,28 @@ public class DateAndNote {
 
     private String title;
     private String note;
+    private String volume;
 
     private Date date;
     private String dateToString;
 
-    public DateAndNote(String title) {
-        this.title = title;
-        this.note = note;
-        date = new Date();
-    }
     public DateAndNote() {
         this.title = title;
         this.note = note;
-        date = new Date();
+        this.volume = volume;
     }
 
+    public DateAndNote(String title) {
+        this.title = title;
+        this.note = note;
+        this.volume = volume;
+    }
+
+    public DateAndNote(String title, String volume) {
+        this.title = title;
+        this.note = note;
+        this.volume = volume;
+    }
 
     private static SimpleDateFormat DATA_FORMAT = new SimpleDateFormat("dd.MM.yyyy");
 
@@ -35,14 +42,6 @@ public class DateAndNote {
 
     public void setNote(String note) {
         this.note = note;
-    }
-
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
     }
 
     public String getDateToString() {
@@ -56,5 +55,13 @@ public class DateAndNote {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public String getVolume() {
+        return volume;
+    }
+
+    public void setVolume(String volume) {
+        this.volume = volume;
     }
 }

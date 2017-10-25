@@ -71,8 +71,11 @@ public class Adapter extends BaseAdapter {
     }
 
 
+
+
     public void delitItem (int position) {
         list.remove(position);
         notifyDataSetChanged();
     }
+
 }
