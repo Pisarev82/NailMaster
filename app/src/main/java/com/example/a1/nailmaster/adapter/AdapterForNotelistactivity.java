@@ -42,6 +42,7 @@ public class AdapterForNotelistactivity extends Adapter {
     public void addElement (String title, String volume) {
         list.add(new DateAndNote(title, volume));
         notifyDataSetChanged();
+
     }
 
 }

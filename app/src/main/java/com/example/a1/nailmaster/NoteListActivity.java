@@ -42,7 +42,7 @@ public class NoteListActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getApplicationContext(), "Click", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Клик", Toast.LENGTH_SHORT).show();
                 adapter.addElement("ok");
             }
         });
@@ -67,13 +67,13 @@ public class NoteListActivity extends AppCompatActivity {
         if (lengthOfTitle == 0) {
             Toast.makeText(getApplicationContext(), "Данные отсутсвуют", Toast.LENGTH_SHORT).show();
         } else {
-            spaseIndex = newString.indexOf(" ");
-            while (stringAmount.isEmpty()) {
+            spaseIndex = newString.trim().indexOf(" ");
+            while (spaseIndex != -1 || stringAmount.length() != 0) {
                 Boolean isDigital = Character.isDigit(newString.charAt(++spaseIndex));
                 if (isDigital) {
                     stringAmount = newString.substring(spaseIndex, lengthOfTitle);
                     spaseIndex = stringAmount.indexOf(" ");
-                    lengthOfTitle = stringAmount.length();
+
                     Toast.makeText(getApplicationContext(), "stringAmount", Toast.LENGTH_SHORT).show();
                 } else {newString = newString.substring(spaseIndex, lengthOfTitle);
                 lengthOfTitle = newString.length();
@@ -86,6 +86,8 @@ public class NoteListActivity extends AppCompatActivity {
             } else {Toast.makeText(getApplicationContext(), string + " без количества ", Toast.LENGTH_SHORT).show();}
         }
         adapter.addElement(string.trim(), stringAmount);
+        editText.setText("");
+        listView.smoothScrollToPosition(adapter.getCount());
     }
 }
 
