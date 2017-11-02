@@ -59,35 +59,24 @@ public class NoteListActivity extends AppCompatActivity {
     }
 
     private void splitString (String string) {
-        String newString = string;
-        newString.trim();
-        String stringAmount = new String();
-        int lengthOfTitle = string.length();
-        int spaseIndex = 0;
-        if (lengthOfTitle == 0) {
-            Toast.makeText(getApplicationContext(), "Данные отсутсвуют", Toast.LENGTH_SHORT).show();
-        } else {
-            spaseIndex = newString.trim().indexOf(" ");
-            while (spaseIndex != -1 || stringAmount.length() != 0) {
-                Boolean isDigital = Character.isDigit(newString.charAt(++spaseIndex));
-                if (isDigital) {
-                    stringAmount = newString.substring(spaseIndex, lengthOfTitle);
-                    spaseIndex = stringAmount.indexOf(" ");
+        String text = string.trim();
+        String amount = "";
+        int i = 0;
 
-                    Toast.makeText(getApplicationContext(), "stringAmount", Toast.LENGTH_SHORT).show();
-                } else {newString = newString.substring(spaseIndex, lengthOfTitle);
-                lengthOfTitle = newString.length();
-                spaseIndex = newString.indexOf(" ");
-                Toast.makeText(getApplicationContext(), newString + isDigital, Toast.LENGTH_SHORT).show();}
+        while (i < text.length()) {
+
+            if (Character.isSpaceChar(text.charAt(i)) & Character.isDigit(text.charAt(++i)) ) {
+                amount = text.substring( i, text.length() );
+                text = text.substring(0, i).trim();
+                i = text.length();
             }
-            if (stringAmount.length() != 0) {
-                string = string.substring(0, string.length() - lengthOfTitle);
-                Toast.makeText(getApplicationContext(), string + "  +  " +stringAmount, Toast.LENGTH_SHORT).show();
-            } else {Toast.makeText(getApplicationContext(), string + " без количества ", Toast.LENGTH_SHORT).show();}
         }
-        adapter.addElement(string.trim(), stringAmount);
+        adapter.addElement(text, amount);
         editText.setText("");
         listView.smoothScrollToPosition(adapter.getCount());
     }
+
+
+
 }
 

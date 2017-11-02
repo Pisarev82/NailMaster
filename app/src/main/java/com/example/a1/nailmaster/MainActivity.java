@@ -39,40 +39,40 @@ public class MainActivity extends AppCompatActivity {
         adapter = new Adapter(this, list);
         listView.setAdapter(adapter);
 
-        registerForContextMenu(listView);
+//        registerForContextMenu(listView);
 
     }
 
-    @Override
-    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
-        super.onCreateContextMenu(menu, v, menuInfo);
-        MenuInflater menuInflater = getMenuInflater();
-        menuInflater.inflate(R.menu.master_list_menu, menu);
-    }
+//    @Override
+//    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+//        super.onCreateContextMenu(menu, v, menuInfo);
+//        MenuInflater menuInflater = getMenuInflater();
+//        menuInflater.inflate(R.menu.master_list_menu, menu);
+//    }
 
-    @Override
-    public boolean onContextItemSelected(MenuItem item) {
-        AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
-        int i = info.position;
-        dateAndNote = listOfNote.getDateAndNoute(i);
-        switch (item.getItemId()) {
-            case R.id.master_list_add:
-                adapter.addElement(dateAndNote.getTitle());
-                return true;
-            case R.id.master_list_edit:
-                Intent intent = new Intent(this, NoteDetail.class);
-                intent.putExtra("id", i);
-                startActivity(intent);
-                return true;
-            case R.id.master_list_delete:
-                adapter.delitItem(info.position);
-                return true;
-            case R.id.master_new_activity:
-                Intent intent1 = new Intent(this, NoteListActivity.class);
-                startActivity(intent1);return true;
-        }
-        return super.onContextItemSelected(item);
-    }
+//    @Override
+//    public boolean onContextItemSelected(MenuItem item) {
+//        AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
+//        int i = info.position;
+//        dateAndNote = listOfNote.getDateAndNoute(i);
+//        switch (item.getItemId()) {
+//            case R.id.master_list_add:
+//                adapter.addElement(dateAndNote.getTitle());
+//                return true;
+//            case R.id.master_list_edit:
+//                Intent intent = new Intent(this, NoteDetail.class);
+//                intent.putExtra("id", i);
+//                startActivity(intent);
+//                return true;
+//            case R.id.master_list_delete:
+//                adapter.delitItem(info.position);
+//                return true;
+//            case R.id.master_new_activity:
+//                Intent intent1 = new Intent(this, NoteListActivity.class);
+//                startActivity(intent1);return true;
+//        }
+//        return super.onContextItemSelected(item);
+//    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
