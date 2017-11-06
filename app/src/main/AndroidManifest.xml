@@ -21,7 +21,10 @@
         <activity
             android:name=".NoteDetail"
             android:parentActivityName=".MainActivity"></activity>
-        <activity android:name=".NoteListActivity"></activity>
+        <activity
+            android:name=".NoteListActivity"
+            android:parentActivityName=".MainActivity">
+        </activity>
     </application>
 
 </manifest>

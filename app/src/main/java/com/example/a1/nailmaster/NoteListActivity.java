@@ -56,6 +56,7 @@ public class NoteListActivity extends AppCompatActivity {
                 splitString(title);
             }
         });
+
     }
 
     private void splitString (String string) {
@@ -71,9 +72,11 @@ public class NoteListActivity extends AppCompatActivity {
                 i = text.length();
             }
         }
+
         adapter.addElement(text, amount);
         editText.setText("");
         listView.smoothScrollToPosition(adapter.getCount());
+
     }
 
 

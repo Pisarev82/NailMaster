@@ -12,4 +12,5 @@
     <string name="number">количество</string>
     <string name="save">Сохранить</string>
     <string name="options_menu_about">О программе</string>
+    <string name="menu_openNoteList">Открыть список</string>
 </resources>
