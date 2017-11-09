@@ -66,7 +66,7 @@ public class Adapter extends BaseAdapter {
     }
 
     public void addElement (String previous) {
-        list.add(new DateAndNote("New" + " " + previous));
+        list.add(new DateAndNote(previous));
         notifyDataSetChanged();
     }
 

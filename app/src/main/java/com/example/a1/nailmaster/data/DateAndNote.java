@@ -1,5 +1,6 @@
 package com.example.a1.nailmaster.data;
 
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -7,7 +8,7 @@ import java.util.Date;
  * Created by nikolaypisarev on 11.10.17.
  */
 
-public class DateAndNote {
+public class DateAndNote implements Serializable {
 
     private String title;
     private String note;

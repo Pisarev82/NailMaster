@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
         listView = (ListView) findViewById(R.id.listView);
         listOfNote = new ListOfNote();
         list = listOfNote.getListOfnote();
-        if (list.size() == 0) {list = listOfNote.initList();}
+//        if (list.size() == 0) {list = listOfNote.initList();}
         adapter = new Adapter (this, list);
         listView.setAdapter(adapter);
     }

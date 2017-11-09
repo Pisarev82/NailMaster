@@ -54,6 +54,7 @@
             android:layout_height="match_parent"
             android:layout_marginBottom="8dp"
             android:layout_marginTop="8dp"
+            android:hint="Список пуст. Создайте новую запись."
             app:layout_constraintBottom_toTopOf="@+id/editText_activity_note_list"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintLeft_toLeftOf="parent"

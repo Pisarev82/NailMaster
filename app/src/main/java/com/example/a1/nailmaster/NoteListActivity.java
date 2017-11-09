@@ -16,12 +16,24 @@ import com.example.a1.nailmaster.adapter.AdapterForNotelistactivity;
 import com.example.a1.nailmaster.data.DateAndNote;
 import com.example.a1.nailmaster.data.ListOfNote;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.util.List;
+
 public class NoteListActivity extends AppCompatActivity {
 
     ListView listView;
     AdapterForNotelistactivity adapter;
     EditText editText;
     Button button;
+
+    ListOfNote listOfNote = new ListOfNote();
+    List<DateAndNote> list;
+
+    private final String FILE_NAME = "SaveData.dat";
 
 
 
@@ -35,7 +47,13 @@ public class NoteListActivity extends AppCompatActivity {
     }
 
     private void initUi () {
-        adapter = new AdapterForNotelistactivity(this, ListOfNote.getListOfnote());
+//        loadFromInternalFile();
+
+        final String fileName = getFilesDir() + FILE_NAME;
+        list = listOfNote.loadFromInternalFile(fileName);
+        int i = list.size();
+        Toast.makeText(getApplicationContext(), "Код выполнен " + i, Toast.LENGTH_SHORT).show();
+        adapter = new AdapterForNotelistactivity(this, list);
         listView = (ListView) findViewById(R.id.listView_activity_note_list);
         listView.setAdapter(adapter);
 
@@ -53,7 +71,15 @@ public class NoteListActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String title = editText.getText().toString();
-                splitString(title);
+                if (title.isEmpty()) {
+                    Toast.makeText(getApplicationContext(), "Поле ввода пустое", Toast.LENGTH_SHORT).show();
+                } else {
+                    splitString(title);
+//                    saveToInternalFile();
+                    listOfNote.saveToInternalFile(fileName);
+                    Toast.makeText(getApplicationContext(), "Save", Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
 
@@ -64,22 +90,64 @@ public class NoteListActivity extends AppCompatActivity {
         String amount = "";
         int i = 0;
 
-        while (i < text.length()) {
+        while (i < text.length()-1) {
 
             if (Character.isSpaceChar(text.charAt(i)) & Character.isDigit(text.charAt(++i)) ) {
                 amount = text.substring( i, text.length() );
                 text = text.substring(0, i).trim();
                 i = text.length();
+                adapter.addElement(text, amount);
             }
         }
-
-        adapter.addElement(text, amount);
+        if (amount.length() < 1 ) {
+            adapter.addElement(text);
+        }
         editText.setText("");
         listView.smoothScrollToPosition(adapter.getCount());
 
     }
 
-
+//    private void saveToInternalFile () {
+//        File file;
+//
+//        try {
+//            file = new File(getFilesDir() + FILE_NAME);
+//
+//            FileOutputStream fileOutputStream;
+//            ObjectOutputStream objectOutputStream;
+//
+//            if (file.exists())  {
+//                file.createNewFile();
+//            }
+//            fileOutputStream = new FileOutputStream(file, false);
+//            objectOutputStream = new ObjectOutputStream(fileOutputStream);
+//            objectOutputStream.writeObject(listOfNote);
+//
+//
+//
+//        }catch (Exception ex) {
+//            ex.printStackTrace();
+//        }
+//
+//    }
+//
+//    private void loadFromInternalFile () {
+//
+//        FileInputStream fileInputStream;
+//        ObjectInputStream objectInputStream;
+//
+//        try {
+//            fileInputStream = new FileInputStream(getFilesDir() + FILE_NAME);
+//            objectInputStream = new ObjectInputStream(fileInputStream);
+//
+//            listOfNote = (ListOfNote) objectInputStream.readObject();
+//            int i = listOfNote.getListOfnote().size();
+//            Toast.makeText(getApplicationContext(), "Код выполнен " + i, Toast.LENGTH_SHORT).show();
+//
+//        } catch (Exception exc) {
+//            exc.printStackTrace();
+//        }
+//    }
 
 }
 
