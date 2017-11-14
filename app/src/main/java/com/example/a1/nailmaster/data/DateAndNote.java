@@ -10,7 +10,7 @@ import java.util.Date;
 
 public class DateAndNote implements Serializable {
 
-    private String title;
+//    private String title;
     private String note;
     private String volume;
 
@@ -18,19 +18,19 @@ public class DateAndNote implements Serializable {
     private String dateToString;
 
     public DateAndNote() {
-        this.title = title;
+//        this.title = title;
+//        this.note = note;
+//        this.volume = volume;
+    }
+
+    public DateAndNote(String note) {
+//        this.title = title;
         this.note = note;
         this.volume = volume;
     }
 
-    public DateAndNote(String title) {
-        this.title = title;
-        this.note = note;
-        this.volume = volume;
-    }
-
-    public DateAndNote(String title, String volume) {
-        this.title = title;
+    public DateAndNote(String note, String volume) {
+//        this.title = title;
         this.note = note;
         this.volume = volume;
     }
@@ -50,13 +50,13 @@ public class DateAndNote implements Serializable {
         return dateToString = DATA_FORMAT.format(date);
     }
 
-    public String getTitle() {
-        return title;
-    }
+//    public String getTitle() {
+//        return title;
+//    }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
+//    public void setTitle(String title) {
+//        this.title = title;
+//    }
 
     public String getVolume() {
         return volume;

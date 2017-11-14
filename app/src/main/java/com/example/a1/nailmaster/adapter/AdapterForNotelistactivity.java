@@ -31,7 +31,7 @@ public class AdapterForNotelistactivity extends Adapter {
         DateAndNote dateAndNote = ListOfNote.getDateAndNoute(position);
 
         TextView textView= (TextView) view.findViewById(R.id.title_of_note_in_list);
-        textView.setText(dateAndNote.getTitle());
+        textView.setText(dateAndNote.getNote());
 
         TextView textView1 = (TextView) view.findViewById(R.id.description_of_note_in_list);
         textView1.setText(dateAndNote.getVolume());

@@ -52,10 +52,10 @@ public class Adapter extends BaseAdapter {
         DateAndNote dateAndNote = getDate(position);
 
         TextView textView = (TextView) view.findViewById(R.id.title_of_note);
-        textView.setText(dateAndNote.getTitle());
+        textView.setText(dateAndNote.getNote());
 
         TextView textView1 = (TextView) view.findViewById(R.id.note);
-        textView1.setText(dateAndNote.getNote());
+        textView1.setText(dateAndNote.getVolume());
 
         return view;
     }

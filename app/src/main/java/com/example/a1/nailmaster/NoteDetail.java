@@ -43,31 +43,31 @@ public class NoteDetail extends AppCompatActivity {
         intent = getIntent();
         position = intent.getIntExtra("id", 1);
         dateAndNote = ListOfNote.getDateAndNoute(position);
-        title.setText(dateAndNote.getTitle());
+        title.setText(dateAndNote.getNote());
         date.setText(dateAndNote.getDateToString());
-        note.setText(dateAndNote.getNote());
+        note.setText(dateAndNote.getVolume());
 
     }
         /* Реализация сохранения данных и возврат в основное активити */
-    private void saveChanges () {
-        dateAndNote.setTitle(title.getText().toString());
-        dateAndNote.setNote(note.getText().toString());
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
-        finish();
-    }
+//    private void saveChanges () {
+//        dateAndNote.setTitle(title.getText().toString());
+//        dateAndNote.setNote(note.getText().toString());
+//        Intent intent = new Intent(this, MainActivity.class);
+//        startActivity(intent);
+//        finish();
+//    }
         /* Инициализация элементов активити1 */
     private void initUi () {
         date = (EditText) findViewById(R.id.date_of_note);
         title = (EditText) findViewById(R.id.title_of_note);
         note = (EditText) findViewById(R.id.note);
         okButton = (Button) findViewById(R.id.save);
-        okButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                saveChanges();
-            }
-        });
+//        okButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                saveChanges();
+//            }
+//        });
     }
 
 }
