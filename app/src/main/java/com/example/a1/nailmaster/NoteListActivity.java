@@ -47,7 +47,6 @@ public class NoteListActivity extends AppCompatActivity {
     }
 
     private void initUi () {
-//        loadFromInternalFile();
 
         final String fileName = getFilesDir() + FILE_NAME;
         list = listOfNote.loadFromInternalFile(fileName);
@@ -75,7 +74,6 @@ public class NoteListActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Поле ввода пустое", Toast.LENGTH_SHORT).show();
                 } else {
                     splitString(title);
-//                    saveToInternalFile();
                     listOfNote.saveToInternalFile(fileName);
                     Toast.makeText(getApplicationContext(), "Save", Toast.LENGTH_SHORT).show();
                 }
@@ -106,48 +104,6 @@ public class NoteListActivity extends AppCompatActivity {
         listView.smoothScrollToPosition(adapter.getCount());
 
     }
-
-//    private void saveToInternalFile () {
-//        File file;
-//
-//        try {
-//            file = new File(getFilesDir() + FILE_NAME);
-//
-//            FileOutputStream fileOutputStream;
-//            ObjectOutputStream objectOutputStream;
-//
-//            if (file.exists())  {
-//                file.createNewFile();
-//            }
-//            fileOutputStream = new FileOutputStream(file, false);
-//            objectOutputStream = new ObjectOutputStream(fileOutputStream);
-//            objectOutputStream.writeObject(listOfNote);
-//
-//
-//
-//        }catch (Exception ex) {
-//            ex.printStackTrace();
-//        }
-//
-//    }
-//
-//    private void loadFromInternalFile () {
-//
-//        FileInputStream fileInputStream;
-//        ObjectInputStream objectInputStream;
-//
-//        try {
-//            fileInputStream = new FileInputStream(getFilesDir() + FILE_NAME);
-//            objectInputStream = new ObjectInputStream(fileInputStream);
-//
-//            listOfNote = (ListOfNote) objectInputStream.readObject();
-//            int i = listOfNote.getListOfnote().size();
-//            Toast.makeText(getApplicationContext(), "Код выполнен " + i, Toast.LENGTH_SHORT).show();
-//
-//        } catch (Exception exc) {
-//            exc.printStackTrace();
-//        }
-//    }
 
 }
 

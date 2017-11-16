@@ -22,20 +22,7 @@ import static android.provider.Telephony.Mms.Part.FILENAME;
 
 public class ListOfNote implements Serializable{
 
-    private static List<DateAndNote> list = new ArrayList<DateAndNote>();
-
-
-//
-//    public List<DateAndNote> initList() {
-//
-//
-//        list.add(new DateAndNote("first"));
-//        list.add(new DateAndNote("second"));
-//        list.add(new DateAndNote("third"));
-//        list.add(new DateAndNote("Today1"));
-//
-//        return list;
-//    }
+    private static List<DateAndNote> list = new ArrayList<>();
 
     public static List<DateAndNote> getListOfnote () {
         return list;

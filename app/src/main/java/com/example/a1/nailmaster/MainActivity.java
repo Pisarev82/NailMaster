@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
         } ;
         cardView.setOnClickListener(cardViewOnclick);
 
+        listView.setOnClickListener(cardViewOnclick);
 
     }
 
@@ -87,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
         listView = (ListView) findViewById(R.id.listView);
         listOfNote = new ListOfNote();
         list = listOfNote.getListOfnote();
-//        if (list.size() == 0) {list = listOfNote.initList();}
+//        if (list.size() == 0) {list = listOfNote.loadFromInternalFile();}
         adapter = new Adapter (this, list);
         listView.setAdapter(adapter);
     }
